@@ -66,3 +66,6 @@ DISPATCH-*.md
 
 # Local Netlify folder
 .netlify
+
+# Documentos internos (não versionar)
+docs/RESUMO-PRECIFICACAO.md
