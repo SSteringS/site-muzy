@@ -1,17 +1,41 @@
-/** Página inicial — conteúdo real implementado em FE-11 (Sprint 02). */
-export const metadata = {
-  title: 'Clínica Muzy — Medicina Esportiva',
+import type { Metadata } from 'next'
+
+import { getInstitutionalSection } from '@/lib/sanity.queries'
+import { HeroSection } from '@/components/home/HeroSection'
+import { InstitutionalSection } from '@/components/home/InstitutionalSection'
+import { CTASection } from '@/components/home/CTASection'
+
+export const revalidate = 300
+
+export const metadata: Metadata = {
+  title: 'Clínica Muzy | Performance com Saúde',
 }
 
-export default function HomePage() {
+/**
+ * Home da Clínica Muzy.
+ * Busca seções do Sanity (institutionalSection) e aplica fallbacks
+ * quando o dataset estiver vazio — a página funciona sem conteúdo configurado.
+ */
+export default async function HomePage() {
+  // Fetches paralelos — Next.js deduplicará se reutilizados em outro lugar
+  const [heroData, sobreData] = await Promise.all([
+    getInstitutionalSection('hero'),
+    getInstitutionalSection('sobre-clinica'),
+  ])
+
   return (
-    <div className="py-12 text-center">
-      <h1 className="text-4xl font-bold text-brand-900">
-        Clínica Muzy
-      </h1>
-      <p className="mt-4 text-lg text-text-muted">
-        Medicina esportiva e saúde com o Dr. Paulo Muzy.
-      </p>
-    </div>
+    <>
+      <HeroSection
+        heading={heroData?.heading ?? 'Clínica Muzy'}
+        body={heroData?.body ?? 'Performance com Saúde'}
+      />
+
+      <InstitutionalSection
+        heading={sobreData?.heading ?? 'Sobre a Clínica'}
+        body={sobreData?.body ?? null}
+      />
+
+      <CTASection />
+    </>
   )
 }

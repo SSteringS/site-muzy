@@ -44,6 +44,17 @@ export type SiteSettings = {
   logoUrl: string | null
 }
 
+/**
+ * Seção institucional — identificada por `key`.
+ * Keys reservados: "hero", "sobre-clinica", "diferenciais".
+ */
+export type InstitutionalSectionData = {
+  key: string
+  heading: string | null
+  body: string | null
+  backgroundImageUrl: string | null
+}
+
 /** Profissional da equipe */
 export type TeamMember = {
   _id: string
@@ -120,4 +131,24 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
 /** Retorna todos os profissionais da equipe, ordenados pelo campo `order`. */
 export async function getAllTeamMembers(): Promise<TeamMember[]> {
   return client.fetch<TeamMember[]>(getAllTeamMembersQuery)
+}
+
+/**
+ * Retorna uma seção institucional pelo key.
+ * Retorna `null` se o documento não existir no Sanity.
+ *
+ * Keys usados na home: "hero", "sobre-clinica".
+ */
+export async function getInstitutionalSection(
+  key: string,
+): Promise<InstitutionalSectionData | null> {
+  return client.fetch<InstitutionalSectionData | null>(
+    groq`*[_type == "institutionalSection" && key == $key][0] {
+      key,
+      heading,
+      body,
+      "backgroundImageUrl": backgroundImage.asset->url
+    }`,
+    { key },
+  )
 }
