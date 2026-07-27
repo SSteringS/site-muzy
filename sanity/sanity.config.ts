@@ -9,6 +9,7 @@ const SINGLETON_TYPES = new Set(['siteSettings'])
 export default defineConfig({
   name: 'site-muzy',
   title: 'Clínica Muzy',
+  basePath: '/studio',
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
