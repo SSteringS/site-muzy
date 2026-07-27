@@ -1,62 +1,62 @@
-# ============================================================
-# SEGREDOS E AMBIENTE LOCAL
-# ============================================================
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+*.stackdump
+Thumbs.db
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
 .env
 .env.local
 .env*.local
 
-# ============================================================
-# PRIVACIDADE — não vai para o repositório público
-# ============================================================
+# vercel
+.vercel
 
-# Brief com contexto de negócio interno do cliente
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# sanity studio build
+/dist/
+
+# privacidade — brief interno do cliente
 docs/site-muzy-project-brief.md
 
-# Memória dos agentes (notas de projeto, pode acumular contexto sensível)
+# memória dos agentes (pode acumular contexto sensível)
 .claude/agent-memory/
 
-# ============================================================
-# NEXT.JS — gerado em build, não tem valor no Git
-# ============================================================
-.next/
-out/
-build/
+# arquivos de dispatch de agentes (temporários, não vão para o repo)
+DISPATCH-*.md
 
-# TypeScript gerado pelo Next.js
-next-env.d.ts
-*.tsbuildinfo
-
-# ============================================================
-# DEPENDÊNCIAS
-# ============================================================
-node_modules/
-.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# ============================================================
-# SANITY — build do Studio
-# ============================================================
-dist/
-
-# ============================================================
-# LOGS
-# ============================================================
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# ============================================================
-# SISTEMA OPERACIONAL
-# ============================================================
-.DS_Store
-Thumbs.db
-*.stackdump
-
-# ============================================================
-# EDITORES / IDEs
-# ============================================================
+# editores / IDEs
 .vscode/settings.json
 *.swp
 *.swo
