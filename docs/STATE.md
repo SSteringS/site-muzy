@@ -6,7 +6,8 @@ _Última atualização: 2026-07-26_
 
 ## Sprint corrente
 
-_(nenhuma sprint ativa — Sprint 02 fechada em 2026-07-27, aguardando protótipo da agência para Sprint 03)_
+**Sprint 03 — Refinamento Visual** — em planejamento desde 2026-07-27
+`docs/sprints/03-refinamento-visual/README.md`
 
 ---
 
@@ -53,13 +54,22 @@ Objetivo: infraestrutura completamente operacional — repositório, Next.js, Sa
 
 ---
 
+## Tasks — Sprint 03
+
+| Task | Título | Status | Agente |
+|---|---|---|---|
+| FE-12 | Home — cards de contato e seção "Sobre" redesenhada | **planejamento** | frontend |
+| FE-13 | Footer multi-coluna com todos os dados da clínica | **planejamento** | frontend |
+
+---
+
 ## Sprints futuras (rascunho)
 
 | Sprint | Objetivo | Desbloqueio necessário |
 |---|---|---|
-| Sprint 03 | Blog completo com design final + refinamento UI | Protótipo da agência |
-| Sprint 04 | Deploy e corte de DNS | Confirmação do dono do domínio |
-| Sprint 05 | Onboarding dos editores | Sprints 01–03 |
+| Sprint 04 | UI com design final da agência | Protótipo da agência |
+| Sprint 05 | Deploy e corte de DNS | Confirmação do dono do domínio |
+| Sprint 06 | Onboarding dos editores | Sprints 01–04 |
 
 ---
 
@@ -69,3 +79,4 @@ Objetivo: infraestrutura completamente operacional — repositório, Next.js, Sa
 |---|---|---|
 | Sprint 01 — Setup e CMS | 2026-07-26 → 2026-07-27 | ✅ fechada |
 | Sprint 02 — Design System e UI | 2026-07-27 → 2026-07-27 | ✅ fechada |
+| Sprint 03 — Refinamento Visual | 2026-07-27 → a definir | 🔵 em andamento |
