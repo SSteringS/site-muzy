@@ -56,6 +56,9 @@ docs/site-muzy-project-brief.md
 # arquivos de dispatch de agentes (temporários, não vão para o repo)
 DISPATCH-*.md
 
+# settings locais do Claude Code (específicos do ambiente)
+.claude/settings.local.json
+
 # editores / IDEs
 .vscode/settings.json
 *.swp
