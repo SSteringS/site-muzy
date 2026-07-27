@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
-import { PortableText } from '@portabletext/react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { getAllPosts, getPostBySlug } from '@/lib/sanity.queries'
+import { ArticleBody } from '@/components/artigos/ArticleBody'
 
 export const revalidate = 300
 
@@ -23,6 +23,14 @@ export async function generateMetadata({
   return { title: `${post.title} — Clínica Muzy` }
 }
 
+function formatDate(dateString: string): string {
+  return new Date(dateString).toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  })
+}
+
 export default async function ArtigoPage({
   params,
 }: {
@@ -34,49 +42,48 @@ export default async function ArtigoPage({
   if (!post) notFound()
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <Link
-        href="/artigos"
-        className="mb-8 inline-block text-sm text-text-muted hover:underline"
-      >
-        ← Voltar para artigos
-      </Link>
+    <>
+      {/*
+       * Hero do artigo — fundo navy com título e metadados.
+       * -mx-4 e -mt-10 quebram o padding do container em (site)/layout.tsx.
+       */}
+      <div className="-mx-4 -mt-10 mb-10 bg-brand-900 px-8 py-14 text-white">
+        <div className="mx-auto max-w-3xl">
+          <Link
+            href="/artigos"
+            className="mb-6 inline-block text-sm text-brand-50 opacity-80 hover:opacity-100 hover:underline"
+          >
+            ← Voltar para artigos
+          </Link>
 
-      <article>
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold leading-tight text-brand-900">
+          <h1 className="text-3xl font-bold leading-tight md:text-4xl">
             {post.title}
           </h1>
 
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-muted">
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt).toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </time>
+          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-brand-50 opacity-80">
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
 
             {post.author && (
               <>
-                <span aria-hidden>·</span>
+                <span aria-hidden="true">·</span>
                 <span>{post.author.name}</span>
                 {post.author.role && (
-                  <span className="text-text-muted">({post.author.role})</span>
+                  <span>({post.author.role})</span>
                 )}
               </>
             )}
           </div>
-        </header>
+        </div>
+      </div>
 
+      {/* Corpo do artigo — largura máxima de leitura */}
+      <div className="mx-auto max-w-3xl">
         {post.body ? (
-          <div className="space-y-4 leading-relaxed text-text-primary">
-            <PortableText value={post.body} />
-          </div>
+          <ArticleBody value={post.body} />
         ) : (
           <p className="italic text-text-muted">Este artigo ainda não tem conteúdo.</p>
         )}
-      </article>
-    </div>
+      </div>
+    </>
   )
 }
