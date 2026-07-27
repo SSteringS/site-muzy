@@ -63,3 +63,6 @@ DISPATCH-*.md
 .vscode/settings.json
 *.swp
 *.swo
+
+# Local Netlify folder
+.netlify

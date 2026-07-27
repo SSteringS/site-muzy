@@ -10,6 +10,9 @@ agente: frontend
 # frontend | planner | arquiteto
 origin: backlog
 # backlog | kaizen | emergencial | humano
+tempo_estimado: ""
+# estimativa de esforço (ex: "2-3h", "meio dia"). Preenchida pelo Planner.
+# Agente preenche tempo_real no status report.
 fluxos_qa: []
 # Lista de fluxos para o agente QA verificar após implementação.
 # [] explícito se a task for documental, infra sem UI, ou sem fluxo de usuário verificável.
@@ -20,6 +23,14 @@ fluxos_qa: []
 
 _Por que esta task existe? Qual problema de negócio ou técnico ela resolve?
 Referenciar o épico ou história de usuário do brief quando aplicável._
+
+## Padrão de componente
+
+_Obrigatório para tasks de UI. Omitir (ou marcar N/A) apenas em tasks sem componentes React._
+
+| Componente | Tipo | Justificativa |
+|---|---|---|
+| `components/Exemplo.tsx` | Server Component / Client Component (`"use client"`) | motivo da escolha |
 
 ## Critérios de aceite
 
