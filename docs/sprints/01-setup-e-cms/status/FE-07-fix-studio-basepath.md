@@ -35,6 +35,9 @@ Nenhum.
 
 ## Seção 7 — Avaliação QA
 
-**Status:** não aplicável — `fluxos_qa: []` no plano da task.
+**Status:** aprovado — validação manual pelo humano em 2026-07-27.
 
-**Validação manual necessária (CA-02/CA-03):** `npm run dev` e abrir `localhost:3000/studio`.
+| CA | Resultado |
+|---|---|
+| CA-02: Studio carrega sem "tool not found" | ✅ confirmado |
+| CA-03: 4 schemas visíveis no menu lateral | ✅ confirmado |
