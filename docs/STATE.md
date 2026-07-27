@@ -6,8 +6,7 @@ _Última atualização: 2026-07-26_
 
 ## Sprint corrente
 
-**Sprint 02 — Design System e UI** — implementação concluída, QA visual pendente
-`docs/sprints/02-design-system-e-ui/README.md`
+_(nenhuma sprint ativa — Sprint 02 fechada em 2026-07-27, aguardando protótipo da agência para Sprint 03)_
 
 ---
 
@@ -69,4 +68,4 @@ Objetivo: infraestrutura completamente operacional — repositório, Next.js, Sa
 | Sprint | Período | Status |
 |---|---|---|
 | Sprint 01 — Setup e CMS | 2026-07-26 → 2026-07-27 | ✅ fechada |
-| Sprint 02 — Design System e UI | 2026-07-27 → a definir | 🔵 em andamento |
+| Sprint 02 — Design System e UI | 2026-07-27 → 2026-07-27 | ✅ fechada |

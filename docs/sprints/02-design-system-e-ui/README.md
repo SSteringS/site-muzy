@@ -1,7 +1,7 @@
 # Sprint 02 — Design System e UI
 
 _Período: 2026-07-27 → 2026-07-27_
-_Status: **implementação concluída — QA visual pendente**_
+_Status: **FECHADA**_
 
 ---
 
