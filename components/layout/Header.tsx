@@ -6,7 +6,7 @@ import { MobileMenuToggle } from './MobileMenuToggle'
 /** Header global da Clínica Muzy. Server Component — sem estado. */
 export function Header() {
   return (
-    <header className="relative bg-[--color-brand-900] text-white shadow-md">
+    <header className="relative bg-brand-900 text-white shadow-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-4">
         {/* Logo textual — imagem real chega com a agência */}
         <Link

@@ -38,7 +38,7 @@ export function MobileMenuToggle() {
       {isOpen && (
         <nav
           aria-label="Menu mobile"
-          className="absolute left-0 right-0 top-full bg-[--color-brand-900] border-t border-[--color-brand-700] px-4 py-4"
+          className="absolute left-0 right-0 top-full bg-brand-900 border-t border-brand-700 px-4 py-4"
         >
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
@@ -46,7 +46,7 @@ export function MobileMenuToggle() {
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-1 text-white hover:text-[--color-brand-50]"
+                  className="block py-1 text-white hover:text-brand-50"
                 >
                   {link.label}
                 </Link>

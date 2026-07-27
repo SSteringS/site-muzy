@@ -13,21 +13,21 @@ export default async function ArtigosPage() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-8 text-3xl font-bold text-[--color-brand-900]">Artigos</h1>
+      <h1 className="mb-8 text-3xl font-bold text-brand-900">Artigos</h1>
 
       {posts.length === 0 ? (
-        <p className="text-[--color-text-muted]">Nenhum artigo publicado ainda.</p>
+        <p className="text-text-muted">Nenhum artigo publicado ainda.</p>
       ) : (
         <ul className="space-y-6">
           {posts.map((post) => (
-            <li key={post._id} className="border-b border-[--color-border] pb-6">
+            <li key={post._id} className="border-b border-border pb-6">
               <Link href={`/artigos/${post.slug.current}`} className="group">
-                <h2 className="text-xl font-semibold text-[--color-brand-900] group-hover:underline">
+                <h2 className="text-xl font-semibold text-brand-900 group-hover:underline">
                   {post.title}
                 </h2>
               </Link>
 
-              <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[--color-text-muted]">
+              <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-muted">
                 <time dateTime={post.publishedAt}>
                   {new Date(post.publishedAt).toLocaleDateString('pt-BR', {
                     day: '2-digit',

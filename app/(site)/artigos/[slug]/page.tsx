@@ -37,18 +37,18 @@ export default async function ArtigoPage({
     <div className="mx-auto max-w-3xl">
       <Link
         href="/artigos"
-        className="mb-8 inline-block text-sm text-[--color-text-muted] hover:underline"
+        className="mb-8 inline-block text-sm text-text-muted hover:underline"
       >
         ← Voltar para artigos
       </Link>
 
       <article>
         <header className="mb-8">
-          <h1 className="text-3xl font-bold leading-tight text-[--color-brand-900]">
+          <h1 className="text-3xl font-bold leading-tight text-brand-900">
             {post.title}
           </h1>
 
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[--color-text-muted]">
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-muted">
             <time dateTime={post.publishedAt}>
               {new Date(post.publishedAt).toLocaleDateString('pt-BR', {
                 day: '2-digit',
@@ -62,7 +62,7 @@ export default async function ArtigoPage({
                 <span aria-hidden>·</span>
                 <span>{post.author.name}</span>
                 {post.author.role && (
-                  <span className="text-[--color-text-muted]">({post.author.role})</span>
+                  <span className="text-text-muted">({post.author.role})</span>
                 )}
               </>
             )}
@@ -70,11 +70,11 @@ export default async function ArtigoPage({
         </header>
 
         {post.body ? (
-          <div className="space-y-4 leading-relaxed text-[--color-text-primary]">
+          <div className="space-y-4 leading-relaxed text-text-primary">
             <PortableText value={post.body} />
           </div>
         ) : (
-          <p className="italic text-[--color-text-muted]">Este artigo ainda não tem conteúdo.</p>
+          <p className="italic text-text-muted">Este artigo ainda não tem conteúdo.</p>
         )}
       </article>
     </div>

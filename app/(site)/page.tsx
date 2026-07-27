@@ -6,10 +6,10 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="py-12 text-center">
-      <h1 className="text-4xl font-bold text-[--color-brand-900]">
+      <h1 className="text-4xl font-bold text-brand-900">
         Clínica Muzy
       </h1>
-      <p className="mt-4 text-lg text-[--color-text-muted]">
+      <p className="mt-4 text-lg text-text-muted">
         Medicina esportiva e saúde com o Dr. Paulo Muzy.
       </p>
     </div>
