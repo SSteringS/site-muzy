@@ -5,7 +5,7 @@ sprint: "01-setup-e-cms"
 estado: concluido
 data_conclusao: 2026-07-27
 branch: feature/FE-02-sanity-schemas
-pr_url: ~
+pr_url: https://github.com/SSteringS/site-muzy/pull/2
 agente: frontend
 ---
 
@@ -60,7 +60,14 @@ Versões já instaladas na FE-01. A API de `defineType`/`defineField` e `structu
 
 _(Preenchida pelo agente QA após execução dos fluxos_qa. Deixar em branco se QA não foi acionado.)_
 
-**Status:** não aplicável — `fluxos_qa: []` no plano da task.
+**Status:** aprovado — validação manual pelo humano em 2026-07-27.
 
-**Fluxos executados:** nenhum (QA manual pendente: CA-07 e CA-08 requerem `npm run dev` local
-com conta Sanity autenticada no browser — ação humana necessária).
+**Fluxos executados:**
+
+| Fluxo | Resultado | Observação |
+|---|---|---|
+| CA-07: Studio em localhost:3000/studio | passou | `npm run dev` + autenticação Sanity OK |
+| CA-08: criar artigo de teste | passou | title + slug criados sem erro no Studio |
+
+**Observações gerais:**
+- Todos os 9 CAs do plano validados (CA-01/02 via Sanity Cloud, CA-03–06 via código, CA-07/08 via browser, CA-09 via `.env.local` local).
