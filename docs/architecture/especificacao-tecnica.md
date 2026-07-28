@@ -21,17 +21,32 @@ _Derivada de: `docs/site-muzy-project-brief.md` + ADRs 0001 e 0002_
 
 ---
 
+## URLs do projeto
+
+| Ambiente | URL |
+|---|---|
+| Produção (Netlify) | https://sss-site-muzy.netlify.app |
+| Admin Netlify | https://app.netlify.com/projects/sss-site-muzy |
+| Repositório | https://github.com/SSteringS/site-muzy |
+| Sanity Studio (local) | http://localhost:3000/studio |
+| Sanity Project ID | `z38d0iih` |
+| Sanity Dataset | `production` |
+
+---
+
 ## Stack e versões-alvo
 
 | Pacote | Versão mínima | Notas |
 |---|---|---|
 | Node.js | 20 LTS | Netlify suporta 20 LTS |
-| Next.js | 15.x | App Router obrigatório |
+| Next.js | 16.x | App Router obrigatório — instalado via create-next-app@16.2.12 |
 | TypeScript | 5.x | `strict: true` |
-| Tailwind CSS | 3.x | Sem PostCSS extra além do padrão |
-| `next-sanity` | 9.x | Inclui Sanity Studio embutido |
-| `@sanity/client` | 6.x | Incluído via `next-sanity` |
-| `@sanity/image-url` | 1.x | Transformação de imagens |
+| Tailwind CSS | **4.x** | Sem `tailwind.config.ts` — configuração via CSS (`globals.css`) |
+| `next-sanity` | **13.x** | Inclui Sanity Studio embutido |
+| `@sanity/client` | incluído via next-sanity | Não instalar separadamente |
+| `@sanity/image-url` | **2.x** | Transformação de imagens |
+
+> Versões reais instaladas — podem diferir das versões mencionadas em outros documentos. `estado-atual-dev.md` é a fonte de verdade.
 
 ---
 
@@ -67,8 +82,8 @@ _Derivada de: `docs/site-muzy-project-brief.md` + ADRs 0001 e 0002_
 ├── public/                 ← assets estáticos
 ├── env.example             ← variáveis de ambiente (sem valores)
 ├── next.config.ts
-├── tailwind.config.ts
 └── tsconfig.json
+# Nota: tailwind.config.ts NÃO existe — Tailwind 4 é configurado via CSS (@import em globals.css)
 ```
 
 ---
