@@ -1,6 +1,6 @@
 ---
 ultimo_review: 2026-07-27
-tasks_incluidas: [FE-01, FE-02, FE-03, FE-04, FE-06, FE-07, FE-08, FE-09, FE-10, FE-11]
+tasks_incluidas: [FE-01, FE-02, FE-03, FE-04, FE-06, FE-07, FE-08, FE-09, FE-10, FE-11, FE-12]
 ---
 
 # Estado atual — branch develop
@@ -94,8 +94,9 @@ components/
 ├── profissionais/
 │   └── TeamMemberCard.tsx  ← card de profissional (foto/avatar, nome, cargo, bio)
 └── home/
-    ├── HeroSection.tsx     ← hero navy com heading, body e CTA
-    ├── InstitutionalSection.tsx ← seção warm-100 com heading e body
+    ├── HeroSection.tsx     ← hero navy + suporte a backgroundImageUrl? (overlay com z-10)
+    ├── InstitutionalSection.tsx ← prop variant: 'light' | 'dark' (dark = navy + texto branco)
+    ├── ContactCardsSection.tsx  ← 3 cards: Atendimento (WhatsApp), Horário, Localização
     └── CTASection.tsx      ← grid de 2 cards linkando /artigos e /profissionais
 sanity/
 ├── sanity.config.ts        ← estrutura + singleton config + basePath: '/studio'
@@ -166,7 +167,7 @@ app/
 
 | Rota | Status | Notas |
 |---|---|---|
-| `/` | ✅ | Home com hero navy, seção "Sobre", CTAs para /artigos e /profissionais |
+| `/` | ✅ | Home: hero → cards contato (Atendimento/Horário/Localização) → seção "Sobre" (navy dark) → CTAs |
 | `/artigos` | ✅ | Hero navy + grid de cards (1/2/3 colunas) + estado vazio |
 | `/artigos/[slug]` | ✅ | Hero com título + ArticleBody tipografado com PortableText |
 | `/profissionais` | ✅ | Hero navy + grid de TeamMemberCards + estado vazio |

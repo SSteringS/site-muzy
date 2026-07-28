@@ -23,7 +23,7 @@ exibe endereço, telefone/WhatsApp, e-mail, horário e CNPJ em colunas.
 
 | Task | Título | Status | Bloqueia |
 |---|---|---|---|
-| FE-12 | Home — cards de contato e seção "Sobre" redesenhada | planejamento | — |
+| FE-12 | Home — cards de contato e seção "Sobre" redesenhada | **concluido** | — |
 | FE-13 | Footer multi-coluna com todos os dados da clínica | planejamento | — |
 
 FE-12 e FE-13 são independentes — podem ser executadas em paralelo.

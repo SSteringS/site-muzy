@@ -58,7 +58,7 @@ Objetivo: infraestrutura completamente operacional — repositório, Next.js, Sa
 
 | Task | Título | Status | Agente |
 |---|---|---|---|
-| FE-12 | Home — cards de contato e seção "Sobre" redesenhada | **planejamento** | frontend |
+| FE-12 | Home — cards de contato e seção "Sobre" redesenhada | **concluido** | frontend |
 | FE-13 | Footer multi-coluna com todos os dados da clínica | **planejamento** | frontend |
 
 ---
