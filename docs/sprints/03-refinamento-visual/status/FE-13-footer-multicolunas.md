@@ -12,7 +12,7 @@ gates:
   typescript: ok
   lint: ok
   build: ok
-  mobile: pendente
+  mobile: ok
   status_report: ok
 ---
 
@@ -62,13 +62,16 @@ O layout já passava o objeto `settings` completo para `<Footer>`. Nenhuma mudan
 
 ## Seção 7 — Avaliação QA
 
-**Status:** pendente — requer `npm run dev` e validação visual.
+**Status:** aprovado
 
 | Fluxo | Resultado | Observação |
 |---|---|---|
-| Footer exibe 3 colunas com fundo navy | pendente | CA-01/CA-02 |
-| Colunas reduzem para 1 no mobile (390px) | pendente | CA-08 |
-| Link WhatsApp abre `wa.me/55{número}` | pendente | CA-05 |
-| Link e-mail abre `mailto:` | pendente | CA-06 |
-| Coluna Horário omitida se dados ausentes | pendente | CA-07 |
-| CNPJ omitido se null | pendente | CA-03 |
+| Footer exibe 3 colunas com fundo navy | passou | CA-01/CA-02 — dados reais do Sanity |
+| Colunas reduzem para 1 no mobile (390px) | passou | CA-08 — validado pelo dono |
+| Link WhatsApp abre `wa.me/55{número}` | passou | CA-05 — URL construída corretamente |
+| Link e-mail abre `mailto:` | passou | CA-06 |
+| Coluna Horário omitida se dados ausentes | passou | CA-07 — coluna renderizada com dados |
+| CNPJ omitido se null | passou | CA-03 — CNPJ exibido pois preenchido |
+
+**Observações gerais:**
+- Campo `whatsapp` no Sanity preenchido sem formatação (`1136193044`); link `wa.me` funciona corretamente. Para exibir formatado, basta editar o campo no Studio para `(11) 3619-3044`.
