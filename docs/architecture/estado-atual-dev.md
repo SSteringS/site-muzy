@@ -1,6 +1,6 @@
 ---
 ultimo_review: 2026-07-27
-tasks_incluidas: [FE-01, FE-02, FE-03, FE-04, FE-06, FE-07, FE-08, FE-09, FE-10, FE-11, FE-12]
+tasks_incluidas: [FE-01, FE-02, FE-03, FE-04, FE-06, FE-07, FE-08, FE-09, FE-10, FE-11, FE-12, FE-13]
 ---
 
 # Estado atual — branch develop
@@ -86,7 +86,7 @@ components/
 ├── layout/
 │   ├── Header.tsx          ← Server Component — nav desktop + logo "Muzy"
 │   ├── MobileMenuToggle.tsx← Client Component ("use client") — toggle hamburguer
-│   ├── Footer.tsx          ← Server Component — dados de contato do Sanity
+│   ├── Footer.tsx          ← Server Component — 3 colunas navy (A Clínica / Contato / Horário)
 │   └── nav-links.ts        ← links de navegação compartilhados
 ├── artigos/
 │   ├── ArticleCard.tsx     ← card de artigo (título, data, autor, link)
